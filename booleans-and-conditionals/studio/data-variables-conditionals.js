@@ -54,7 +54,9 @@ if (weatherStatus === "clear") {
 }
 // Verify shuttle launch can proceed based on above conditions
 if (preparedForLiftoff === true) {
+    console.log("----------------------------------------------------------------------------")
     console.log("All systems green. Initiating shuttle launch sequence.")
+    console.log("----------------------------------------------------------------------------")
     console.log("Date: " + date);
     console.log("Time: " +  time);
     console.log("Crew Count: " + astronautCount);

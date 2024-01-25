@@ -30,6 +30,14 @@ function makeSquare(size) {
     return stairs.slice(0, -1);
   }
 
+  function makeSpaceLine(numSpaces, numChars) {
+    let spaceLine = "";
+    for (let i = 0; i < (numSpaces*2 + numChars); i++) {
+        spaceLine += (makeline(i) + "/n");
+    }
+    return spaceLine.slice(0, -1)
+  }
+
   function makeIsoscelesTriangle(height) {
     let triangle = '';
     for (let i = 0; i < height; i++) {

@@ -1,10 +1,26 @@
-// Code your selectRandomEntry function here:
-
-
-// Code your buildCrewArray function here:
-
-
 let idNumbers = [291, 414, 503, 599, 796, 890];
+
+
+function selectRandomEntry() {
+  const randomIndex = Math.floor(Math.random() * idNumbers.length);
+  const randomEntry = idNumbers[randomIndex];
+  return randomEntry;
+}
+function selectThreeRandomEntries() {
+  let selectedEntries = [];
+  while (selectedEntries.length < 3) {
+    const randomEntry = selectRandomEntry();
+    if (!selectedEntries.includes(randomEntry)) {
+      selectedEntries.push(randomEntry);
+    }
+  }
+
+  return selectedEntries;
+}
+// Call the function to select three unique random ID numbers
+
+
+
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -52,4 +68,23 @@ let candidateF = {
 
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
-// Code your template literal and console.log statements:
+const threeRandomIDs = selectThreeRandomEntries();
+// Print the result
+console.log("Three Random ID Numbers:", threeRandomIDs);
+
+// Code your buildCrewArray function here:
+// Function to select animals for the space mission based on lucky ID numbers
+function selectAnimalsForSpaceMission(selectedIDs, candidates) {
+  let crew = [];
+  for (let i = 0; i < candidates.length; i++) {
+    if (selectedIDs.includes(candidates[i].astronautID)) {
+      crew.push(candidates[i]);
+    }
+  }
+  return crew;
+}
+let selectedIDs = [414, 503, 796]; // Replace with the randomly selected ID numbers
+let selectedCrew = selectAnimalsForSpaceMission(selectedIDs, animals);
+console.log(`${selectedCrew.map(animal => animal.name).join(', ')} are going to space!`);
+
+

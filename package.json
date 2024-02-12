@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "index.js": "^0.0.3",
     "readline-sync": "^1.4.10"
   }
 }

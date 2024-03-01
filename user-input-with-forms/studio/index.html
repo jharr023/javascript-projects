@@ -8,10 +8,11 @@
         // TODO: register the handler
 		let form = document.getElementById("searchForm");
 		form.addEventListener("submit", function(event) {
-		let engineSelector = document.querySelector("input[name=engine]");
+		let engineSelector = document.querySelector("input[name=engine]:checked");
 		console.log(engineSelector);
+		form.setAttribute("action", engineSelector.value);
 		if (engineSelector.value === "") {
-			alert("Select one opyion.");
+			alert("Select one option.");
 			event.preventDefault();
 		}
 
